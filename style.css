@@ -34,3 +34,24 @@
     src: url("./Fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
     font-weight: 800;
 }
+
+/* general style */
+body {
+    font-family: "Poppins";
+    color: white;
+    background: radial-gradient(circle,
+            #2b375fff 0%,
+            #0b1023ff 100%);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.conteaner {
+    width: 1600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+}
