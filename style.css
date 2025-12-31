@@ -126,4 +126,58 @@ main div.gallery-expert:hover .model-right {
     transform: translateY(0px);
 }
 
+/* -- 3 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+main .switcher-item {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+main .switcher-item ul.switcher-list {
+    font-weight: 600;
+    font-size: 1.3rem;
+    list-style: none;
+    padding: 0;
+    width: auto;
+    direction: rtl;
+}
+
+main .switcher-item ul.switcher-list li {
+    display: flex;
+    align-items: center;
+}
+
+main .switcher-item ul.switcher-list li::before {
+    content: "•";
+    font-size: 4rem;
+    color: rgb(155, 155, 175);
+    margin-left: 20px;
+    transition: transform 0.2s ease;
+}
+
+main .switcher-item ul.switcher-list li:hover::before {
+    animation: pulse 1s infinite;
+}
+
+main .switcher-item ul.switcher-list li.active::before {
+    animation: pulse 1s infinite;
+    color: white;
+}
+
 /* end main style */
