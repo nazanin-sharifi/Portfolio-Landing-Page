@@ -49,9 +49,20 @@ a {
     text-decoration: none;
 }
 
-.conteaner {
-    width: 1600px;
+.container {
+    max-width: 1600px;
     margin: auto;
-    padding: 20px;
+    padding: 10px 50px;
     display: flex;
 }
+
+/* start header style */
+header {
+    font-weight: 500;
+    width: 100%;
+}
+
+header>div.container {
+    justify-content: space-between;
+}
+/* end header style */
