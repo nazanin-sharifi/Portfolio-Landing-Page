@@ -96,4 +96,34 @@ main section.about-expert .expert-location {
     font-size: 1rem;
 }
 
+/* -- 2 */
+main div.gallery-expert {
+    width: 378px;
+    height: 520px;
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+}
+
+main div.gallery-expert .model-left,
+main div.gallery-expert .model-right {
+    width: 50%;
+    height: inherit;
+    transition: 0.5s ease;
+}
+
+main div.gallery-expert .model-left {
+    transform: translateY(-50px);
+}
+
+main div.gallery-expert .model-right {
+    transform: translateY(50px);
+}
+
+/* hover (div.gallery-expert) */
+main div.gallery-expert:hover .model-left,
+main div.gallery-expert:hover .model-right {
+    transform: translateY(0px);
+}
+
 /* end main style */
