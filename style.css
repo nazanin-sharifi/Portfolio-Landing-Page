@@ -65,4 +65,35 @@ header {
 header>div.container {
     justify-content: space-between;
 }
+
 /* end header style */
+
+/* start main style */
+main>div.container {
+    height: 88vh;
+}
+
+/* -- 1 */
+main .about-expert {
+    font-weight: 400;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+main section.about-expert .expert-name {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+main section.about-expert .expert-skill {
+    font-size: 2rem;
+}
+
+main section.about-expert .expert-location {
+    font-size: 1rem;
+}
+
+/* end main style */
