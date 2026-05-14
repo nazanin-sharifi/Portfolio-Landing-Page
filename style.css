@@ -35,6 +35,19 @@
     font-weight: 800;
 }
 
+/* animations */
+@keyframes pulse {
+    0% {
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 /* general style */
 * {
     margin: 0;
@@ -146,36 +159,51 @@ header #menu-box #menu .menuItems .menuItem ul li a {
 
 /* end header style */
 
-/* start main style */
-main>div.container {
-    height: 88vh;
+
+/***************** start main style ******************/
+main .mainBox {
+    height: 87vh;
+    display: flex;
+    gap: 20px;
+}
+
+main .mainBox section {
+    flex-grow: 1;
 }
 
 /* -- 1 */
-main .about-expert {
-    font-weight: 400;
+.mainBox #about-expert {
     width: 400px;
+    font-weight: 300;
     display: flex;
     flex-direction: column;
     justify-content: end;
+    cursor: default;
 }
 
-main section.about-expert .expert-name {
+.mainBox #about-expert #expert-name {
     font-size: 3rem;
     font-weight: 500;
-    margin: 0;
+    margin-bottom: 30px;
 }
 
-main section.about-expert .expert-skill {
+.mainBox #about-expert #expert-skill {
     font-size: 2rem;
+    margin-bottom: 35px;
 }
 
-main section.about-expert .expert-location {
+.mainBox #about-expert #expert-location {
     font-size: 1rem;
 }
 
+
 /* -- 2 */
-main div.gallery-expert {
+.mainBox .gallery-expert {
+    display: flex;
+    align-items: center;
+}
+
+.gallery-expert .gallery-box {
     width: 378px;
     height: 520px;
     margin: auto;
@@ -183,43 +211,30 @@ main div.gallery-expert {
     overflow: hidden;
 }
 
-main div.gallery-expert .model-left,
-main div.gallery-expert .model-right {
+.gallery-expert .gallery-box #model-left,
+.gallery-expert .gallery-box #model-right {
     width: 50%;
     height: inherit;
-    transition: 0.5s ease;
 }
 
-main div.gallery-expert .model-left {
+.gallery-expert .gallery-box #model-left {
+    background-image: url(Images/model-left.png);
     transform: translateY(-50px);
 }
 
-main div.gallery-expert .model-right {
+.gallery-expert .gallery-box #model-right {
+    background-image: url(Images/model-right.png);
     transform: translateY(50px);
 }
 
-/* hover (div.gallery-expert) */
-main div.gallery-expert:hover .model-left,
-main div.gallery-expert:hover .model-right {
+/* hover (gallery-box) */
+.gallery-expert .gallery-box:hover #model-left,
+.gallery-expert .gallery-box:hover #model-right {
     transform: translateY(0px);
 }
 
 /* -- 3 */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.5);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-main .switcher-item {
+.mainBox .switcher {
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -227,35 +242,42 @@ main .switcher-item {
     align-items: flex-end;
 }
 
-main .switcher-item ul.switcher-list {
+.mainBox .switcher .switcher-list {
     font-weight: 600;
     font-size: 1.3rem;
     list-style: none;
-    padding: 0;
-    width: auto;
     direction: rtl;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-main .switcher-item ul.switcher-list li {
+.switcher .switcher-list .switcher-item {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    color: rgb(155, 155, 175);
 }
 
-main .switcher-item ul.switcher-list li::before {
+.switcher .switcher-list .switcher-item::before {
     content: "•";
     font-size: 4rem;
+    line-height: 50px;
     color: rgb(155, 155, 175);
     margin-left: 20px;
     transition: transform 0.2s ease;
 }
 
-main .switcher-item ul.switcher-list li:hover::before {
+.switcher .switcher-list .switcher-item:hover::before {
     animation: pulse 1s infinite;
 }
 
-main .switcher-item ul.switcher-list li.active::before {
-    animation: pulse 1s infinite;
+.switcher .switcher-list .switcher-item.active {
     color: white;
 }
 
+.switcher .switcher-list .switcher-item.active::before {
+    animation: pulse 1s infinite;
+    color: white;
+}
 /* end main style */
