@@ -38,6 +38,7 @@
 /* animations */
 @keyframes pulse {
     0% {
+        transform: scale(1);
     }
 
     50% {
@@ -48,6 +49,51 @@
         transform: scale(1);
     }
 }
+
+@keyframes transition {
+
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes cheangeImgLeft {
+
+    0%,
+    100% {
+        transform: translateY(-50px);
+    }
+
+    50% {
+        transform: translateY(-530px);
+    }
+}
+
+@keyframes cheangeImgRight {
+
+    0%,
+    100% {
+        transform: translateY(50px);
+    }
+
+    50% {
+        transform: translateY(-530px);
+    }
+
+}
+
 /* general style */
 * {
     margin: 0;
@@ -215,6 +261,7 @@ main .mainBox section {
 .gallery-expert .gallery-box #model-right {
     width: 50%;
     height: inherit;
+    transition: transform 0.5s ease, background-image .3s ease-in-out .35s;
 }
 
 .gallery-expert .gallery-box #model-left {
@@ -257,6 +304,7 @@ main .mainBox section {
     align-items: center;
     cursor: pointer;
     color: rgb(155, 155, 175);
+    transition: all 0.2s ease-in-out;
 }
 
 .switcher .switcher-list .switcher-item::before {
