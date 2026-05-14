@@ -36,11 +36,18 @@
 }
 
 /* general style */
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Poppins";
     color: white;
-    background: radial-gradient(circle,
-            #2b375fff 0%,
+    height: 100vh;
+    overflow: hidden;
+    background-image: radial-gradient(circle,
+            rgb(50, 78, 110) 0%,
             #0b1023ff 100%);
 }
 
@@ -49,21 +56,92 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style: none;
+}
+
 .container {
     max-width: 1600px;
     margin: auto;
     padding: 10px 50px;
-    display: flex;
 }
 
-/* start header style */
+/*********************** start header style ************************/
 header {
-    font-weight: 500;
-    width: 100%;
+    position: relative;
 }
 
-header>div.container {
+header .top-header {
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+header .top-header h1 {
+    font-size: 20px;
+    font-weight: 500;
+    cursor: default;
+}
+
+header #menu-box {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 99999999;
+    background-color: rgba(0, 0, 0, 0.274);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s linear;
+}
+
+header #menu-box #menu {
+    position: absolute;
+    top: -430px;
+    width: 100%;
+    height: 430px;
+    background-color: aliceblue;
+    transition: top .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+header #menu-box #menu .top-header span {
+    color: #0E1328;
+    font-weight: 600;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: default;
+}
+
+header #menu-box #menu .menuItems {
+    margin-top: 60px;
+    color: #152358;
+    display: flex;
+    gap: 100px;
+    margin-left: 20px;
+}
+
+header #menu-box #menu .menuItems .menuItem {
+    min-width: 130px;
+}
+
+header #menu-box #menu .menuItems .menuItem h4 {
+    border-left: 4px solid #152358;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: default;
+}
+
+header #menu-box #menu .menuItems .menuItem ul li {
+    padding: 3px 0;
+}
+
+header #menu-box #menu .menuItems .menuItem ul li a {
+    color: #5e5e69;
+    font-size: 14px;
 }
 
 /* end header style */
